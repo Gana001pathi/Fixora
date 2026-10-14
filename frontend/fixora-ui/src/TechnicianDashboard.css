@@ -1,0 +1,212 @@
+.technician-dashboard {
+  min-height: 100vh;
+  background: #f4f5ef;
+  color: #21352d;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.tech-topbar {
+  min-height: 74px;
+  padding: 0 max(6%, calc((100% - 1250px) / 2));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  background: #fffefa;
+  border-bottom: 1px solid #e3e7dc;
+}
+
+.tech-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #193d35;
+  font-size: 24px;
+  font-weight: 850;
+}
+
+.tech-brand > span:last-child > span { color: #7ca061; }
+
+.tech-brand-mark {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 9px 9px 9px 3px;
+  background: #c8dda9;
+}
+
+.tech-topbar-right { display: flex; align-items: center; gap: 22px; }
+
+.tech-session-state {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #67756a;
+  font-size: 12px;
+}
+
+.tech-session-state i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #6e9a55;
+}
+
+.tech-logout {
+  padding: 9px 12px;
+  border: 1px solid #d6ded1;
+  border-radius: 4px;
+  background: #fffefa;
+  color: #365044;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.tech-main { max-width: 1190px; margin: 0 auto; padding: 54px 28px 34px; }
+
+.tech-welcome {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  padding-bottom: 34px;
+}
+
+.tech-kicker {
+  color: #718d5f;
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 1.7px;
+}
+
+.tech-welcome h1,
+.tech-login-intro h1 {
+  margin: 12px 0 8px;
+  color: #193d35;
+  font-size: 38px;
+  line-height: 1.12;
+}
+
+.tech-welcome p,
+.tech-login-intro p { margin: 0; color: #718077; font-size: 14px; line-height: 1.7; }
+
+.tech-work-date { display: grid; gap: 6px; text-align: right; }
+.tech-work-date span { color: #829087; font-size: 11px; }
+.tech-work-date strong { color: #354e41; font-size: 13px; }
+
+.tech-metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-bottom: 45px; }
+
+.tech-metrics article {
+  position: relative;
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 19px 21px;
+  overflow: hidden;
+  border: 1px solid #e0e6db;
+  border-radius: 5px;
+  background: #fffefa;
+}
+
+.tech-metrics article > span { color: #718077; font-size: 12px; font-weight: 650; }
+.tech-metrics article strong { color: #203b30; font-size: 27px; line-height: 1; }
+.tech-metrics article i { position: absolute; inset: 0 auto 0 0; width: 3px; }
+.metric-green { background: #76a45d; }
+.metric-amber { background: #d29b4c; }
+.metric-blue { background: #608c8b; }
+
+.tech-jobs-heading { display: flex; align-items: end; justify-content: space-between; gap: 18px; margin-bottom: 18px; }
+.tech-jobs-heading h2 { display: flex; align-items: center; gap: 10px; margin: 8px 0 0; color: #203b30; font-size: 23px; }
+.tech-jobs-heading h2 span { padding: 3px 7px; border-radius: 3px; background: #e4ebdc; color: #4f6d48; font-size: 11px; }
+
+.tech-filter { display: inline-flex; padding: 3px; border: 1px solid #dce3d8; border-radius: 5px; background: #fffefa; }
+.tech-filter button { min-height: 31px; padding: 0 12px; border: 0; border-radius: 3px; background: transparent; color: #6b786e; font-size: 11px; font-weight: 700; }
+.tech-filter button.selected { background: #244a3b; color: #fffefa; }
+
+.tech-job-list { display: grid; gap: 11px; }
+.tech-job { padding: 22px 24px 18px; border: 1px solid #e0e5dc; border-radius: 5px; background: #fffefa; }
+.tech-job-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; }
+.tech-job-ref { color: #668653; font-size: 10px; font-weight: 850; letter-spacing: 1px; }
+.tech-job-head h3 { margin: 7px 0 0; color: #213b30; font-size: 18px; }
+.tech-status { flex: 0 0 auto; padding: 6px 9px; border-radius: 3px; font-size: 10px; font-weight: 750; }
+.status-pending { background: #f8efd9; color: #89622b; }
+.status-confirmed { background: #e6f0ec; color: #3c6b59; }
+.status-assigned { background: #e5efdd; color: #496f3d; }
+.status-in-progress { background: #f7eadb; color: #96653b; }
+.status-completed { background: #e4efea; color: #3b7057; }
+
+.tech-job-details { display: grid; grid-template-columns: 1fr 1fr 1fr 1.6fr; gap: 12px 20px; margin: 19px 0 16px; }
+.tech-job-details div { min-width: 0; }
+.tech-job-details dt { margin-bottom: 5px; color: #879187; font-size: 10px; font-weight: 650; }
+.tech-job-details dd { margin: 0; color: #3d5146; font-size: 12px; line-height: 1.55; overflow-wrap: anywhere; }
+.tech-address dd { max-width: 360px; }
+.tech-job-actions { display: flex; justify-content: flex-end; padding-top: 13px; border-top: 1px solid #edf0e9; }
+.tech-job-actions button { min-width: 140px; min-height: 38px; display: inline-flex; align-items: center; justify-content: center; gap: 14px; padding: 0 14px; border: 0; border-radius: 4px; background: #21473a; color: white; font-size: 11px; font-weight: 750; }
+.tech-job-actions button:disabled { opacity: .65; cursor: wait; }
+.tech-complete-label { color: #52805c; font-size: 11px; font-weight: 750; }
+
+.tech-empty { padding: 55px 20px; border: 1px dashed #cad5c8; border-radius: 5px; background: #fbfcf8; text-align: center; }
+.tech-empty > span { display: inline-grid; width: 34px; height: 34px; place-items: center; border-radius: 50%; background: #e5efdd; color: #52764a; }
+.tech-empty h3 { margin: 13px 0 5px; color: #294538; font-size: 16px; }
+.tech-empty p { margin: 0; color: #7b887e; font-size: 12px; }
+.tech-error { margin: 14px 0; padding: 11px 13px; border: 1px solid #ecc5b9; border-radius: 4px; background: #fff5f1; color: #9a4935; font-size: 12px; line-height: 1.5; }
+.tech-footer { display: flex; justify-content: space-between; gap: 15px; margin-top: 30px; color: #839087; font-size: 10px; }
+.tech-footer a { color: #496b53; font-weight: 700; }
+
+.tech-login-layout { width: min(100% - 48px, 1040px); min-height: calc(100vh - 74px); display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; gap: 9%; margin: 0 auto; padding: 65px 0; }
+.tech-login-intro { padding: 30px 0; }
+.tech-login-intro h1 { margin-top: 20px; font-size: 52px; }
+.tech-login-intro h1 em { color: #7c9d67; font-family: Georgia, serif; font-weight: 500; }
+.tech-login-intro p { max-width: 390px; margin-top: 17px; }
+.tech-login-rule { display: flex; align-items: center; gap: 12px; margin-top: 48px; color: #728176; font-size: 9px; font-weight: 800; letter-spacing: 1.5px; }
+.tech-login-rule span { width: 40px; height: 1px; background: #9eaf92; }
+.tech-login-form { display: grid; gap: 10px; padding: 31px; border: 1px solid #e0e6dc; border-radius: 5px; background: #fffefa; }
+.tech-login-form h2 { margin: 3px 0 0; color: #203d31; font-size: 25px; }
+.tech-login-form > p { margin: 0 0 14px; color: #78857b; font-size: 12px; line-height: 1.6; }
+.tech-login-form label { margin-top: 7px; color: #40544a; font-size: 11px; font-weight: 750; }
+.tech-login-form input { width: 100%; height: 43px; padding: 0 11px; border: 1px solid #dce3d9; border-radius: 3px; background: white; color: #263b30; font-size: 13px; }
+.tech-login-form input:focus { outline: 2px solid #9eb58e; outline-offset: 1px; }
+.tech-login-form > button { min-height: 44px; display: flex; align-items: center; justify-content: space-between; margin-top: 12px; padding: 0 14px; border: 0; border-radius: 4px; background: #21473a; color: white; font-size: 12px; font-weight: 750; }
+.tech-login-form > button:disabled { opacity: .65; cursor: wait; }
+.tech-home-link { margin-top: 4px; color: #718076; font-size: 10px; text-align: center; }
+.tech-link-help { margin: 0; padding: 10px; border-left: 2px solid #d29b4c; background: #fcf6e9; color: #6f5a35; font-size: 10px; line-height: 1.55; }
+.tech-link-help a { display: inline-block; margin-top: 5px; color: #315d45; font-weight: 750; }
+.tech-state { max-width: 1190px; margin: 0 auto; padding: 80px 28px; }
+.tech-state h1 { color: #203d32; font-size: 25px; }
+.tech-loading-bar { width: min(100%, 260px); height: 3px; background: linear-gradient(90deg, #72985b 45%, #e0e8d9 45%); }
+
+@media (max-width: 760px) {
+  .tech-topbar { min-height: 64px; padding: 0 18px; }
+  .tech-main { padding: 37px 18px 28px; }
+  .tech-welcome { align-items: flex-start; flex-direction: column; padding-bottom: 25px; }
+  .tech-welcome h1 { font-size: 31px; }
+  .tech-work-date { text-align: left; }
+  .tech-metrics { gap: 8px; margin-bottom: 34px; }
+  .tech-metrics article { min-height: 90px; padding: 13px; }
+  .tech-metrics article > span { font-size: 10px; }
+  .tech-metrics article strong { font-size: 23px; }
+  .tech-jobs-heading { align-items: flex-start; flex-direction: column; }
+  .tech-job { padding: 18px 15px 14px; }
+  .tech-job-details { grid-template-columns: 1fr 1fr; gap: 13px; }
+  .tech-address { grid-column: 1 / -1; }
+  .tech-address dd { max-width: none; }
+  .tech-login-layout { width: min(100% - 36px, 480px); min-height: auto; grid-template-columns: 1fr; gap: 25px; padding: 42px 0; }
+  .tech-login-intro { padding: 0; }
+  .tech-login-intro h1 { font-size: 40px; }
+  .tech-login-rule { margin-top: 22px; }
+  .tech-login-form { padding: 24px 20px; }
+}
+
+@media (max-width: 420px) {
+  .tech-session-state { font-size: 0; }
+  .tech-topbar-right { gap: 11px; }
+  .tech-metrics article { padding: 11px 9px; }
+  .tech-metrics article > span { max-width: 70px; line-height: 1.25; }
+  .tech-job-head h3 { font-size: 16px; }
+  .tech-status { padding: 5px 6px; font-size: 9px; }
+  .tech-filter { width: 100%; }
+  .tech-filter button { flex: 1; padding: 0 6px; }
+  .tech-footer { align-items: flex-start; flex-direction: column; }
+}

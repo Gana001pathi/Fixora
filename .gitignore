@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Local database and uploaded files
+backend/db.sqlite3
+*.sqlite3
+media/
+
+# React
+node_modules/
+dist/
+frontend/fixora-ui/node_modules/
+frontend/fixora-ui/dist/
+
+# Editor and operating system
+.vscode/
+.DS_Store
+Thumbs.db

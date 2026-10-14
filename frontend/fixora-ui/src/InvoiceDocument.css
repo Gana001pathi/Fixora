@@ -1,0 +1,130 @@
+.invoice-document {
+  width: 100%;
+  max-width: 720px;
+  margin: 24px auto 0;
+  padding: 30px;
+  border: 1px solid #dfe5dc;
+  border-radius: 5px;
+  background: #fffefa;
+  color: #263d32;
+  box-shadow: 0 12px 32px #263c250d;
+}
+
+.invoice-toolbar,
+.invoice-toolbar > div {
+  display: flex;
+  align-items: center;
+}
+
+.invoice-toolbar {
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #e8ece4;
+  color: #77847a;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.invoice-toolbar > div { gap: 8px; }
+
+.invoice-print-button,
+.invoice-close-button {
+  min-height: 34px;
+  border: 1px solid #d7e0d4;
+  border-radius: 4px;
+  background: #fffefa;
+  color: #315642;
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.invoice-print-button { display: inline-flex; align-items: center; gap: 8px; padding: 0 11px; }
+.invoice-print-button span { font-size: 15px; }
+.invoice-close-button { width: 34px; font-size: 19px; }
+
+.invoice-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 25px 0 19px;
+}
+
+.invoice-brand { display: inline-flex; align-items: center; gap: 8px; color: #193d35; font-size: 19px; font-weight: 850; }
+.invoice-brand > span:first-child { width: 26px; height: 26px; display: grid; place-items: center; border-radius: 7px 7px 7px 2px; background: #c8dda9; font-size: 16px; }
+.invoice-brand .invoice-brand-dot { margin-left: -8px; color: #7ca061; }
+.invoice-heading-title { text-align: right; }
+.invoice-heading-title > span, .invoice-label { color: #718d5f; font-size: 9px; font-weight: 850; letter-spacing: 1.5px; }
+.invoice-heading-title h2 { margin: 5px 0 0; color: #203b30; font-size: 23px; }
+
+.invoice-reference-grid { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid #e8ece4; border-bottom: 1px solid #e8ece4; }
+.invoice-reference-grid > div { display: grid; gap: 5px; padding: 13px 0; }
+.invoice-reference-grid > div + div { padding-left: 20px; border-left: 1px solid #e8ece4; }
+.invoice-reference-grid span { color: #839087; font-size: 10px; }
+.invoice-reference-grid strong { color: #344d40; font-size: 12px; overflow-wrap: anywhere; }
+
+.invoice-parties { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; padding: 22px 0; }
+.invoice-parties h3 { margin: 9px 0 5px; color: #263f33; font-size: 15px; }
+.invoice-parties p, .invoice-parties address { margin: 4px 0 0; color: #627268; font-size: 11px; font-style: normal; line-height: 1.6; overflow-wrap: anywhere; }
+.invoice-parties dl { display: grid; gap: 7px; margin: 9px 0 0; }
+.invoice-parties dl > div { display: flex; justify-content: space-between; gap: 10px; }
+.invoice-parties dt { color: #829087; font-size: 10px; }
+.invoice-parties dd { margin: 0; color: #3f5649; font-size: 10px; font-weight: 700; text-align: right; }
+
+.invoice-table-wrap { overflow-x: auto; }
+.invoice-table { width: 100%; border-collapse: collapse; }
+.invoice-table th, .invoice-table td { padding: 11px 9px; border-bottom: 1px solid #e8ece4; font-size: 11px; text-align: left; }
+.invoice-table thead th { background: #f3f6ef; color: #66776a; font-size: 9px; letter-spacing: .8px; text-transform: uppercase; }
+.invoice-table td:last-child, .invoice-table th:last-child { text-align: right; white-space: nowrap; }
+.invoice-table tbody td { color: #40564a; }
+.invoice-table tfoot th { color: #68786d; font-weight: 650; }
+.invoice-table tfoot tr:first-child th, .invoice-table tfoot tr:first-child td { border-top: 1px solid #dce4d8; }
+.invoice-table .invoice-discount th, .invoice-table .invoice-discount td { color: #587d55; }
+.invoice-table .invoice-total th, .invoice-table .invoice-total td { padding-top: 14px; padding-bottom: 14px; border-bottom: 0; color: #203f32; font-size: 14px; font-weight: 850; }
+
+.invoice-footer { display: flex; justify-content: space-between; gap: 12px; padding-top: 13px; border-top: 1px solid #e8ece4; color: #7f8a80; font-size: 9px; }
+
+.invoice-payment-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+  padding: 13px;
+  border: 1px solid #dfe7db;
+  border-radius: 4px;
+  background: #f7f9f3;
+}
+
+.invoice-payment-summary > div { display: grid; align-content: start; gap: 7px; min-width: 0; }
+.invoice-payment-summary span { color: #758278; font-size: 9px; }
+.invoice-payment-summary strong { color: #294538; font-size: 12px; overflow-wrap: anywhere; }
+.invoice-payment-summary .invoice-payment-status { width: fit-content; padding: 4px 7px; border-radius: 3px; font-size: 10px; }
+.invoice-payment-status.status-pending { background: #f8efd9; color: #89622b; }
+.invoice-payment-status.status-paid { background: #e4efea; color: #3b7057; }
+.invoice-payment-status.status-partially-paid { background: #e8f0df; color: #55763e; }
+.invoice-payment-status.status-failed { background: #fae8e5; color: #9d493b; }
+.invoice-payment-history { margin: 19px 0; }
+.invoice-payment-history h3 { margin: 0 0 9px; color: #42594b; font-size: 11px; }
+.invoice-payment-history .invoice-table th, .invoice-payment-history .invoice-table td { padding: 8px 6px; font-size: 9px; }
+
+@media (max-width: 600px) {
+  .invoice-document { padding: 20px 14px; }
+  .invoice-heading { align-items: flex-start; flex-direction: column; }
+  .invoice-heading-title { text-align: left; }
+  .invoice-parties { grid-template-columns: 1fr; gap: 18px; }
+  .invoice-parties dl > div { justify-content: flex-start; }
+  .invoice-parties dd { text-align: left; }
+  .invoice-footer { flex-direction: column; }
+  .invoice-payment-summary { grid-template-columns: 1fr; gap: 12px; }
+}
+
+@page { size: A4; margin: 16mm; }
+
+@media print {
+  body * { visibility: hidden !important; }
+  .invoice-document, .invoice-document * { visibility: visible !important; }
+  .invoice-document { position: absolute; top: 0; left: 0; width: 100%; max-width: none; margin: 0; padding: 0; border: 0; border-radius: 0; box-shadow: none; }
+  .invoice-toolbar { display: none !important; }
+  .site-shell { overflow: visible !important; }
+}
