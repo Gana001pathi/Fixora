@@ -1,0 +1,1 @@
+"""Account models are not defined; authentication uses Django's built-in user model."""

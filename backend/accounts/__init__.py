@@ -1,0 +1,1 @@
+"""Fixora account application."""
