@@ -117,7 +117,7 @@ async function handleBooking(event) {
 
   try {
     const response = await fetch(
-      "http://127.0.0.1:8000/api/bookings/",
+     "https://fixora-backend-gmo8.onrender.com/api/bookings/",
       {
         method: "POST",
         headers: {
