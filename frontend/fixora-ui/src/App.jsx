@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import InvoiceDocument from "./InvoiceDocument.jsx";
+import { apiFetch } from "./api.js";
 
 const appliances = [
   { icon: "❄️", name: "Air Conditioner", detail: "AC service & repair" },
@@ -77,7 +78,7 @@ const [messageType, setMessageType] = useState("");
 
   useEffect(() => {
     let isMounted = true;
-    fetch("/api/bookings/pricing/")
+    apiFetch("/api/bookings/pricing/")
       .then(async (response) => {
         const data = await response.json().catch(() => ({}));
         if (!response.ok) throw new Error(data.error || "Unable to load service prices.");
@@ -116,8 +117,8 @@ async function handleBooking(event) {
   setMessageType("");
 
   try {
-    const response = await fetch(
-     "https://fixora-backend-gmo8.onrender.com/api/bookings/",
+    const response = await apiFetch(
+     "/api/bookings/",
       {
         method: "POST",
         headers: {
@@ -207,8 +208,8 @@ async function handleTrackBooking(event) {
 
     const bookingId = Number(match[1]);
 
-    const response = await fetch(
-      `http://127.0.0.1:8000/api/bookings/track/?booking_id=${bookingId}&phone=${encodeURIComponent(trackingPhone.trim())}`
+    const response = await apiFetch(
+      `/api/bookings/track/?booking_id=${bookingId}&phone=${encodeURIComponent(trackingPhone.trim())}`
     );
 
     const data = await response.json();
@@ -237,7 +238,7 @@ async function loadCustomerInvoice() {
   setInvoiceError("");
   setInvoice(null);
   try {
-    const response = await fetch(
+    const response = await apiFetch(
       `/api/bookings/invoices/customer/?reference=${encodeURIComponent(trackingResult.reference)}&phone=${encodeURIComponent(trackingPhone.trim())}`
     );
     const data = await response.json().catch(() => ({}));
@@ -255,9 +256,8 @@ async function loadCustomerNotifications(bookingId, phone) {
   setNotificationError("");
 
   try {
-    const response = await fetch(
+    const response = await apiFetch(
       `/api/bookings/notifications/?booking_id=${bookingId}&phone=${encodeURIComponent(phone)}`,
-      { credentials: "same-origin" }
     );
     const data = await response.json().catch(() => ({}));
 
@@ -286,7 +286,7 @@ async function markNotificationRead(notificationId) {
   setNotificationError("");
 
   try {
-    const response = await fetch(
+    const response = await apiFetch(
       `/api/bookings/notifications/${notificationId}/read/`,
       {
         method: "POST",

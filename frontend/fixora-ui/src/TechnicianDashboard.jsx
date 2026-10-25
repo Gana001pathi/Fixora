@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./TechnicianDashboard.css";
+import { apiFetch } from "./api.js";
 
 const sessionUrl = "/api/bookings/technician/session/";
 const todayLabel = new Date().toLocaleDateString(undefined, {
@@ -41,7 +42,7 @@ function TechnicianDashboard() {
 
   useEffect(() => {
     let isMounted = true;
-    fetch(sessionUrl, { credentials: "same-origin" })
+    apiFetch(sessionUrl)
       .then(async (response) => {
         const data = await response.json().catch(() => ({}));
         if (!isMounted) return;
@@ -72,9 +73,8 @@ function TechnicianDashboard() {
     setError("");
     setAccountNeedsLink(false);
     try {
-      const response = await fetch("/api/bookings/technician/login/", {
+      const response = await apiFetch("/api/bookings/technician/login/", {
         method: "POST",
-        credentials: "same-origin",
         headers: {
           "Content-Type": "application/json",
           "X-CSRFToken": csrfToken,
@@ -99,9 +99,8 @@ function TechnicianDashboard() {
     setSubmitting(true);
     setError("");
     try {
-      await readResponse(await fetch("/api/bookings/technician/logout/", {
+      await readResponse(await apiFetch("/api/bookings/technician/logout/", {
         method: "POST",
-        credentials: "same-origin",
         headers: { "X-CSRFToken": csrfToken },
       }));
       setTechnician(null);
@@ -118,9 +117,8 @@ function TechnicianDashboard() {
     setBusyJobId(job.id);
     setError("");
     try {
-      const response = await fetch(`/api/bookings/technician/jobs/${job.id}/status/`, {
+      const response = await apiFetch(`/api/bookings/technician/jobs/${job.id}/status/`, {
         method: "POST",
-        credentials: "same-origin",
         headers: {
           "Content-Type": "application/json",
           "X-CSRFToken": csrfToken,

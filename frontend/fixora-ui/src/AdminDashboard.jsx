@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { apiFetch } from "./api.js";
 import "./AdminDashboard.css";
 
 const bookingMetrics = [
@@ -104,9 +105,8 @@ function AdminDashboard() {
       setLoading(true);
       setError(null);
       try {
-        const response = await fetch("/api/dashboard/summary/", {
+        const response = await apiFetch("/api/dashboard/summary/", {
           headers: { Accept: "application/json" },
-          credentials: "same-origin",
           signal: controller.signal,
         });
         const data = await response.json().catch(() => ({}));

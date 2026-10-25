@@ -38,14 +38,13 @@ if not SECRET_KEY:
         raise ImproperlyConfigured("SECRET_KEY must be set when DEBUG is disabled.")
     SECRET_KEY = secrets.token_urlsafe(50)
 
+
 ALLOWED_HOSTS = [
-    host.strip()
-    for host in os.environ.get(
-        "ALLOWED_HOSTS",
-        os.environ.get("DJANGO_ALLOWED_HOSTS", "localhost,127.0.0.1"),
-    ).split(",")
-    if host.strip()
+    "fixora-ebm1.vercel.app",
+    "localhost",
+    "127.0.0.1",
 ]
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -179,7 +178,7 @@ CORS_ALLOWED_ORIGINS = [
     origin.strip()
     for origin in os.environ.get(
         "CORS_ALLOWED_ORIGINS",
-        "http://localhost:5173,http://127.0.0.1:5173",
+        "https://fixora-liard.vercel.app,http://localhost:5173,http://127.0.0.1:5173",
     ).split(",")
     if origin.strip()
 ]
