@@ -41,6 +41,7 @@ if not SECRET_KEY:
 
 ALLOWED_HOSTS = [
     "fixora-ebm1.vercel.app",
+    "fixora-ebm1-git-main-ganapathi707t-8035s-projects.vercel.app",
     "localhost",
     "127.0.0.1",
 ]
